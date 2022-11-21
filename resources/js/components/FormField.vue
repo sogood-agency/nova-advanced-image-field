@@ -1,9 +1,10 @@
 <template>
     <DefaultField
         :field="field"
+        :label-for="labelFor"
         :errors="errors"
-        :full-width-content="true"
         :show-help-text="!isReadonly && showHelpText"
+        :full-width-content="true"
     >
         <template #field>
             <image-viewer

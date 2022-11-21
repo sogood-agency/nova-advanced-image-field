@@ -1,6 +1,6 @@
 <template>
-    <panel-item :field="field">
-        <div slot="value">
+    <PanelItem :index="index" :field="field">
+        <template #value>
             <template v-if="shouldShowLoader">
                 <image-loader :src="field.previewUrl" class="max-w-xs" @missing="(value) => missing = value" />
             </template>
@@ -30,15 +30,15 @@
                     </span>
                 </a>
             </p>
-        </div>
-    </panel-item>
+        </template>
+    </PanelItem>
 </template>
 
 <script>
 import ImageLoader from './Image/ImageLoader'
 
 export default {
-    props: ['field', 'resourceId', 'resourceName'],
+    props: ['index', 'resource', 'resourceName', 'resourceId', 'field'],
 
     components: { ImageLoader },
 
